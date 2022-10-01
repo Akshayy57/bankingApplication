@@ -2,8 +2,15 @@ import java.util.Scanner;
 
 public class BankingApplication {
 	public static void main(String[] args) {
-		BankAccount b1 = new BankAccount("Akshay Yadav", 123456);
+		Scanner sc1 = new Scanner(System.in);
+		System.out.println("Enter your Name:");
+		String name = sc1.nextLine();
+		System.out.println("Enter Customer Id:");
+		int custId = sc1.nextInt();
+
+		BankAccount b1 = new BankAccount(name, custId);
 		b1.showMenu();
+		sc1.close();
 	}
 }
 
@@ -100,5 +107,6 @@ class BankAccount {
 
 		} while (option != 'E');
 		System.out.println("Thankyou " + customerName + " for using our services");
+		sc.close();
 	}
 }
